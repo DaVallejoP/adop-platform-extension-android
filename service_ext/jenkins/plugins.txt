@@ -1,1 +1,2 @@
 android-emulator:2.15
+port-allocator:1.8
