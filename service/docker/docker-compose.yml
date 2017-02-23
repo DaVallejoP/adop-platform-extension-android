@@ -6,8 +6,8 @@ jenkins-slave:
   net: ${CUSTOM_NETWORK_NAME}
   privileged: true
   environment:
-    SLAVE_LABELS: "aws ldap java8 docker android"
+    SLAVE_LABELS: "android"
     SWARM_PASSWORD: ${PASSWORD_JENKINS}
-    SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
+    SLAVE_EXECUTORS: 1
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
     INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
