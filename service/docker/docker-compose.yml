@@ -11,3 +11,14 @@ jenkins-slave:
     SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
     INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD}
+
+
+android-emulator:
+  container_name: android-emulator
+  restart: always
+  build: ./android-emulator
+  ports:
+    - "5555:5555"
+    - "5900:5900"
+
+
