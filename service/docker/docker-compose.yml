@@ -3,25 +3,23 @@ jenkins-slave:
   restart: always
   #image: accenture/adop-jenkins-slave:0.1.4
   build: ./jenkins-slave-android
-  net: local_network
+  net: ${CUSTOM_NETWORK_NAME}
   privileged: true
-  #links:
-  #  - jenkins
   environment:
     SLAVE_LABELS: "android"
-    SWARM_PASSWORD: ${SWARM_PASSWORD}
-    SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
+    SWARM_PASSWORD: ${PASSWORD_JENKINS}
+    SLAVE_EXECUTORS: 1
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
-    INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD}
+    INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
 
 
-#android-emulator:
-#  container_name: android-emulator
-#  net: local_network
-#  restart: always
-#  build: ./android-emulator
-#  ports:
-#    - "5555:5555"
-#    - "5900:5900"
+android-emulator:
+  #net: ${CUSTOM_NETWORK_NAME}
+  container_name: android-emulator
+  restart: always
+  build: ./android-emulator
+  ports:
+    - "5555:5555"
+    - "5900:5900"
 
 
