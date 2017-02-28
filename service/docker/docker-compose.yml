@@ -3,14 +3,14 @@ jenkins-slave:
   restart: always
   #image: accenture/adop-jenkins-slave:0.1.4
   build: ./jenkins-slave-android
-  net: ${CUSTOM_NETWORK_NAME}
+  net: local_network
   privileged: true
   environment:
     SLAVE_LABELS: "android"
-    SWARM_PASSWORD: ${PASSWORD_JENKINS}
-    SLAVE_EXECUTORS: 1
+    SWARM_PASSWORD: ${SWARM_PASSWORD}
+    SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
-    INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
+    INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD}
 
 
 android-emulator:
