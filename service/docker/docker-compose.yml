@@ -14,7 +14,7 @@ jenkins-slave:
 
 
 android-emulator:
-  #net: ${CUSTOM_NETWORK_NAME}
+  net: ${CUSTOM_NETWORK_NAME}
   container_name: android-emulator
   restart: always
   build: ./android-emulator
