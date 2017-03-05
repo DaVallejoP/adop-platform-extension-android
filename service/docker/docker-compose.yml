@@ -18,7 +18,7 @@ android-emulator:
   restart: always
   build: ./android-emulator
   net: local_network
- ports:
+  ports:
     - "5900/tcp:5900/tcp"
   expose:
     - "5900"
