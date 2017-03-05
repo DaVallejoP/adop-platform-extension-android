@@ -15,13 +15,12 @@ jenkins-slave:
 
 android-emulator:
   container_name: android-emulator
-  net: local_network
   restart: always
   build: ./android-emulator
-  expose :
+  net: local_network
+ ports:
+    - "5900/tcp:5900/tcp"
+  expose:
+    - "5900"
     - "5555"
-    #- "5900"
-  ports:
-    - "5900:5900"
-
 
