@@ -16,7 +16,6 @@ jenkins-slave:
 android-emulator:
   container_name: android-emulator
   net: local_network
-  container_name: android-emulator
   restart: always
   build: ./android-emulator
   expose :
