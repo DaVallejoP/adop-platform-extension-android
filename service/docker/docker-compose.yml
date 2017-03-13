@@ -1,4 +1,4 @@
-jenkins-slave:
+jenkins-slave-android:
   container_name: jenkins-slave-android
   restart: always
   #image: accenture/adop-jenkins-slave:0.1.4
@@ -11,6 +11,10 @@ jenkins-slave:
     SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
     INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD}
+    DOCKER_TLS_VERIFY: ${DOCKER_TLS_VERIFY}
+    DOCKER_HOST: ${DOCKER_HOST}
+    DOCKER_CLIENT_CERT_PATH: ${DOCKER_CLIENT_CERT_PATH}
+    DOCKER_NETWORK_NAME: ${CUSTOM_NETWORK_NAME}
 
 
 android-emulator:
@@ -23,4 +27,8 @@ android-emulator:
   expose:
     - "5900"
     - "5555"
-
+  environment:
+    DOCKER_TLS_VERIFY: ${DOCKER_TLS_VERIFY}
+    DOCKER_HOST: ${DOCKER_HOST}
+    DOCKER_CLIENT_CERT_PATH: ${DOCKER_CLIENT_CERT_PATH}
+    DOCKER_NETWORK_NAME: ${CUSTOM_NETWORK_NAME}
